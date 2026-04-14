@@ -12,6 +12,10 @@ dist/
 npm-debug.log*
 .DS_Store
 
+# Figma API dumps (local only)
+.figma-node.json
+.figma-home.json
+
 # Editor
 .idea/
 .vscode/*

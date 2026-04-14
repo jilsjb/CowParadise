@@ -9,13 +9,20 @@ export default {
         cream: '#fff8ec',
         hay: '#f4d7a1',
         clay: '#b76e45',
-        ink: '#1f241d'
+        ink: '#1f241d',
+        brand: {
+          cyan: '#06c7f2',
+          gold: '#ffe500',
+          peach: '#ffedd3',
+          cream: '#fff5de'
+        }
       },
       boxShadow: {
         soft: '0 18px 50px rgba(39, 80, 59, 0.14)'
       },
       fontFamily: {
-        display: ['"Playfair Display"', 'serif'],
+        display: ['"Fredoka"', 'system-ui', 'sans-serif'],
+        sans: ['"Rubik"', 'system-ui', 'sans-serif'],
         body: ['"Plus Jakarta Sans"', 'sans-serif']
       },
       backgroundImage: {
