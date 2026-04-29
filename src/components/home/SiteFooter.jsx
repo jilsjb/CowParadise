@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
+
 const quickLinks = [
-  { label: "Home", href: "#top" },
-  { label: "About Us", href: "#about-us" },
-  { label: "Games", href: "#games" },
-  { label: "Stories", href: "#stories" },
-  { label: "Moo Family", href: "#moo-family" },
+  { label: "Home", to: "/" },
+  { label: "About Us", to: "/about-us" },
+  { label: "Games", to: "/games" },
+  { label: "Stories", to: "/stories" },
+  { label: "Moo Family", to: "/moo-family" },
 ];
 
 const communityLinks = [
@@ -68,13 +70,22 @@ function FooterLinkList({ title, links }) {
       </h3>
       <ul className="mt-4 space-y-2.5 text-base font-medium text-neutral-900 md:text-lg">
         {links.map((item) => (
-          <li key={item.href}>
-            <a
-              href={item.href}
-              className="transition hover:text-brand-cyan focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-cyan"
-            >
-              {item.label}
-            </a>
+          <li key={item.href ?? item.to}>
+            {"to" in item ? (
+              <Link
+                to={item.to}
+                className="transition hover:text-brand-cyan focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-cyan"
+              >
+                {item.label}
+              </Link>
+            ) : (
+              <a
+                href={item.href}
+                className="transition hover:text-brand-cyan focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-cyan"
+              >
+                {item.label}
+              </a>
+            )}
           </li>
         ))}
       </ul>
@@ -84,7 +95,10 @@ function FooterLinkList({ title, links }) {
 
 export function SiteFooter() {
   return (
-    <footer className="relative isolate mt-16 min-h-[min(100vh,720px)] w-full overflow-hidden">
+    <footer
+      id="news"
+      className="relative isolate mt-16 min-h-[min(100vh,720px)] w-full overflow-hidden scroll-mt-24"
+    >
       <div
         className="absolute inset-0 bg-[#99d9f2] bg-[url('/images/footer_bg.png')] bg-cover bg-[center_bottom] bg-no-repeat"
         aria-hidden
@@ -98,8 +112,8 @@ export function SiteFooter() {
         <div className="rounded-[40px] border border-white/55 bg-white/60 p-4 shadow-[0_8px_40px_rgba(6,199,242,0.12)] backdrop-blur-md sm:rounded-[40px] sm:p-6 md:rounded-[52px] md:p-2 lg:px-8 lg:py-4">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,260px)_repeat(3,minmax(0,1fr))_minmax(0,280px)] lg:items-start lg:gap-8 xl:gap-12">
             <div className="flex flex-col items-center gap-5 sm:items-start">
-              <a
-                href="#top"
+              <Link
+                to="/"
                 className="inline-block transition hover:opacity-90"
               >
                 <img
@@ -109,7 +123,7 @@ export function SiteFooter() {
                   width={400}
                   height={100}
                 />
-              </a>
+              </Link>
               <div className="flex w-full max-w-[240px] flex-col items-center gap-4 sm:items-start mt-12">
                 <img
                   src="/images/footer_logo1.png"

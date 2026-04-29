@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { SiteHeader } from "./SiteHeader";
 import { FigmaHeroBackground } from "./FigmaMediaVideo";
 import { HOME_MEDIA } from "../../data/home-assets";
 
@@ -54,7 +53,6 @@ export function HeroSection() {
       </div>
 
       <div className="relative z-10 flex min-h-[min(85vh,920px)] flex-col">
-        <SiteHeader />
         <div className="flex flex-1 flex-col justify-center px-4 pb-16 pt-8 sm:px-8 md:px-12 lg:px-16">
           <div className="mx-auto w-full max-w-[1028px] text-left">
             <div

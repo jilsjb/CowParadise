@@ -5,7 +5,7 @@ const POWERED_BY_ICONS = Array.from({ length: 7 }, (_, i) => ({
 export function PoweredBy() {
   return (
     <section
-      id="powered-by"
+      id="marketplace"
       aria-labelledby="powered-by-heading"
       className="scroll-mt-24 bg-white px-4 py-16 sm:px-8 md:py-20"
     >

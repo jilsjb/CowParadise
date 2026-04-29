@@ -10,7 +10,7 @@ const BULLETS = ["Empower Creativity", "Foster Growth", "Build Community"];
 export function WhatIsCowParadise() {
   return (
     <section
-      id="what-is-cow-paradise"
+      id="about-us"
       className="relative scroll-mt-24 bg-[#FFEDD3] pb-16 pt-0 md:pb-24"
     >
       {/* Sand layer pushed down more than waves so more beach shows below the water art */}

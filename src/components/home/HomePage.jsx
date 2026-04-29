@@ -5,7 +5,6 @@ import { TrendingGamesSection } from "./TrendingGamesSection";
 import { PlayVideo } from "./PlayVideo";
 import { GameShortsSection } from "./GameShortsSection";
 import { PoweredBy } from "./PoweredBy";
-import { SiteFooter } from "./SiteFooter";
 
 export function HomePage() {
   return (
@@ -17,7 +16,6 @@ export function HomePage() {
       <PlayVideo />
       <GameShortsSection />
       <PoweredBy />
-      <SiteFooter />
     </div>
   );
 }

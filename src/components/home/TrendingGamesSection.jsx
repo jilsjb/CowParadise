@@ -1,32 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-
-const PLATFORM_ICONS = [
-  { src: "/svg/epic_games_1.svg", label: "Epic Games" },
-  { src: "/svg/epic_games_2.svg", label: "Epic" },
-  { src: "/svg/playstore.svg", label: "Google Play" },
-  { src: "/svg/apple.svg", label: "App Store" },
-];
-
-const TRENDING_GAMES = [
-  {
-    id: "1",
-    image: "/images/trending_game_1.png",
-    description:
-      "Dash, drift, and jump through crazy tracks with the Moo Family in this high-energy Web3 racing adventure.",
-  },
-  {
-    id: "2",
-    image: "/images/trending_game_2.png",
-    description:
-      "Dash, drift, and jump through crazy tracks with the Moo Family in this high-energy Web3 racing adventure.",
-  },
-  {
-    id: "3",
-    image: "/images/trending_game_3.png",
-    description:
-      "Dash, drift, and jump through crazy tracks with the Moo Family in this high-energy Web3 racing adventure.",
-  },
-];
+import { TRENDING_GAMES } from "../../data/trendingGames";
+import { TrendingGameCard } from "../games/TrendingGameCard";
 
 function ArrowIcon({ dir }) {
   return (
@@ -142,60 +116,11 @@ export function TrendingGamesSection() {
             className="flex snap-x snap-mandatory gap-16 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] md:gap-16 [&::-webkit-scrollbar]:hidden"
           >
             {TRENDING_GAMES.map((game) => (
-              <article
+              <TrendingGameCard
                 key={game.id}
-                data-game-card
-                className="group relative w-[85vw] max-w-[420px] shrink-0 snap-center overflow-hidden rounded-[28px] shadow-lg sm:w-[min(45vw,380px)] lg:w-[min(calc(33.333%-1rem),420px)]"
-              >
-                <div className="aspect-[3/4] w-full overflow-hidden bg-neutral-200">
-                  <div className="h-full w-full transition-transform duration-500 ease-out will-change-transform group-hover:scale-110">
-                    <img
-                      src={game.image}
-                      alt=""
-                      className="h-full w-full object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-
-                <div
-                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent"
-                  aria-hidden
-                />
-
-                <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col p-4 text-left sm:p-5">
-                  <p className="font-display text-lg font-bold tracking-wide text-white drop-shadow md:text-xl">
-                    COW RUN
-                  </p>
-                  <p className="mt-2 text-xs leading-snug text-white/95 sm:text-sm">
-                    {game.description}
-                  </p>
-
-                  <div className="mt-3 flex flex-wrap items-center gap-2">
-                    {PLATFORM_ICONS.map((icon) => (
-                      <img
-                        key={icon.src}
-                        src={icon.src}
-                        alt={icon.label}
-                        className="h-7 w-auto object-contain opacity-95 sm:h-8"
-                      />
-                    ))}
-                  </div>
-
-                  <div className="mt-4 flex flex-wrap gap-2 opacity-0 transition-all duration-300 group-hover:pointer-events-auto group-hover:opacity-100 pointer-events-none">
-                    <img
-                      src="/svg/view_details.svg"
-                      alt="View Details"
-                      className="h-8 w-auto object-contain"
-                    />
-                    <img
-                      src="/svg/play_now.svg"
-                      alt="Play Now"
-                      className="h-8 w-auto object-contain"
-                    />
-                  </div>
-                </div>
-              </article>
+                game={game}
+                className="w-[85vw] max-w-[420px] shrink-0 snap-center"
+              />
             ))}
           </div>
 
@@ -265,7 +190,10 @@ export function TrendingGamesSection() {
             />
           </div>
 
-          <div className="relative z-10 grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-20">
+          <div
+            id="moo-family"
+            className="relative z-10 grid scroll-mt-28 gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-20"
+          >
             <div>
               <h3 className="font-display text-7xl font-bold leading-[0.92] tracking-tight text-brand-cyan sm:text-8xl">
                 Featured
