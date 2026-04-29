@@ -1,5 +1,5 @@
-import { PlaceholderPage } from "../PlaceholderPage";
+import { MooFamilyPage as MooFamilyPageContent } from "../../components/mooFamily/MooFamilyPage";
 
 export default function MooFamilyPage() {
-  return <PlaceholderPage title="Moo Family" />;
+  return <MooFamilyPageContent />;
 }
