@@ -1,5 +1,5 @@
-import { PlaceholderPage } from "../PlaceholderPage";
+import { AboutUsPage } from "../../components/about/AboutUsPage";
 
-export default function AboutUsPage() {
-  return <PlaceholderPage title="About Us" />;
+export default function AboutUs() {
+  return <AboutUsPage />;
 }

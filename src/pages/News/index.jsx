@@ -1,5 +1,5 @@
-import { PlaceholderPage } from "../PlaceholderPage";
+import { NewsPage as NewsPageContent } from "../../components/news/NewsPage";
 
 export default function NewsPage() {
-  return <PlaceholderPage title="News" />;
+  return <NewsPageContent />;
 }
