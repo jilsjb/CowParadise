@@ -1,5 +1,5 @@
-import { PlaceholderPage } from "../PlaceholderPage";
+import { LoginPage } from "../../components/login/LoginPage";
 
-export default function LoginPage() {
-  return <PlaceholderPage title="Login" />;
+export default function LoginRoute() {
+  return <LoginPage />;
 }
